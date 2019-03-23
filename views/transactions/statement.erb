@@ -1,23 +1,23 @@
-<h1>Bitey bitey!</h1>
+<h1>Statement</h1>
 
-<form action="/bitings" method="post">
+<form action="/transactions" method="post">
   <label>
-  Select a zombie:
-    <select name="zombie_id">
-      <% for zombie in @zombies %>
-      <option value="<%= zombie.id %>"><%= zombie.name %></option>
+  Select a tag:
+    <select name="tag_id">
+      <% for tag in @tag_list %>
+      <option value="<%= tag.id %>"><%= tag.catagory %></option>
       <% end %>
     </select>
   </label>
 
   <label>
-    Select a victim:
-    <select name="victim_id">
-      <% for victim in @victims %>
-      <option value="<%= victim.id %>"><%= victim.name %></option>
+    Select a merchant:
+    <select name="merchant_id">
+      <% for merchant in @merchant_list %>
+      <option value="<%= merchant.id %>"><%= merchant.name %></option>
       <% end %>
     </select>
   </label>
 
-  <input class="btn btn--action" type='submit' value="Bite!">
+  <input class="btn btn--action" type='submit' value="Tag">
 </form>
