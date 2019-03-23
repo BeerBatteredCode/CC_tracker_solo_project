@@ -19,4 +19,3 @@ CREATE TABLE transactions (
   charge FLOAT(24),
   date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-stamp
