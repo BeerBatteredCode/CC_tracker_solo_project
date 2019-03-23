@@ -1,31 +1,29 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
-require_relative( '../models/biting.rb' )
-require_relative( '../models/victim.rb' )
-require_relative( '../models/zombie.rb' )
-require_relative( '../models/action.rb' )
+require_relative( '../models/transaction.rb' )
+require_relative( '../models/merchant.rb' )
+require_relative( '../models/tag.rb' )
 also_reload( '../models/*' )
 
-get '/bitings' do
-  @bitings = Biting.all
-  @actions = Action.all
-  erb ( :"bitings/index" )
+get '/transactions' do
+  @transaction_list = Transaction.all
+  erb ( :"transactions/index" )
 end
 
-get '/bitings/new' do
-  @victims = Victim.all
-  @zombies = Zombie.all
-  erb(:"bitings/new")
+get '/transactions/new' do
+  @merchant_list = Merchant.all
+  @tag_list = Tag.all
+  erb(:"transactions/new")
 end
 
-post '/bitings' do
-  biting = Biting.new(params)
-  biting.save
-  redirect to("/bitings")
+post '/transactions' do
+  transaction = Transaction.new(params)
+  transaction.save
+  redirect to("/transactions")
 end
 
-post '/bitings/:id/delete' do
-  Biting.destroy(params[:id])
-  redirect to("/bitings")
+post '/transactions/:id/delete' do
+  Transaction.destroy(params[:id])
+  redirect to("/transactions")
 end
