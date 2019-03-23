@@ -18,13 +18,21 @@ class Tag
     @id = results.first()['id'].to_i
   end
 
-  def self.all
+  def self.all()
     sql = 'SELECT * FROM tags'
     results = SqlRunner.run(sql)
     results.map { |tag| Tag.new(tag) }
   end
 
-  def self.delete_all
+  def self.find(id)
+    sql = "SELECT * FROM tags
+          WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Tag.new(results.first)
+  end
+
+  def self.delete_all()
     sql = 'DELETE FROM tags'
     results = SqlRunner.run(sql)
   end
