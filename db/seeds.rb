@@ -27,5 +27,11 @@ transaction1 = Transaction.new ({
 
 transaction1.save
 
+tag1 = Tag.new ({
+  'catagory' => 'extra shopping'
+  })
+
+tag1.update
+
 binding.pry
 nil
