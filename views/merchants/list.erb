@@ -1,9 +1,9 @@
 <h1><%= @merchant.name %> (Merchant)</h1>
 
-<h3>Tagged by:</h3>
+<h3>Stamped by:</h3>
 
 <ul>
-  <% @merchant.tag_check.each do |tag| %>
-  <li><%= tag.catagory %></li>
+  <% @merchant.stamp_check.each do |stamp| %>
+  <li><%= stamp.catagory %></li>
   <% end %>
 </ul>

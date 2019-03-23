@@ -3,7 +3,7 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/transaction.rb' )
 require_relative( '../models/merchant.rb' )
-require_relative( '../models/tag.rb' )
+require_relative( '../models/stamp.rb' )
 also_reload( '../models/*' )
 
 get '/transactions' do
@@ -13,7 +13,7 @@ end
 
 get '/transactions/new' do
   @merchant_list = Merchant.all
-  @tag_list = Tag.all
+  @stamp_list = Stamp.all
   erb(:"transactions/statement")
 end
 

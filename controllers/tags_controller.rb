@@ -1,14 +1,14 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/tag.rb' )
+require_relative( '../models/stamp.rb' )
 also_reload( '../models/*' )
 
-get '/tags' do
-  @tag_list = Tag.all()
-  erb ( :"tags/index" )
+get '/stamps' do
+  @stamp_list = stamp.all()
+  erb ( :"stamps/index" )
 end
 
-get '/tags/:id' do
-  @tag = Tag.find(params['id'].to_i)
-  erb(:"tags/list")
+get '/stamps/:id' do
+  @stamp = stamp.find(params['id'].to_i)
+  erb(:"stamps/list")
 end

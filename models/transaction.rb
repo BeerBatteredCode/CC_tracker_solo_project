@@ -2,21 +2,21 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_reader :id, :merchant_id, :tag_id, :charge, :date
+  attr_reader :id, :merchant_id, :stamp_id, :charge, :date
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
-    @tag_id = options['tag_id'].to_i
+    @stamp_id = options['stamp_id'].to_i
     @charge = options['charge'].to_f
     @date = options['date'].to_i if options['date']
   end
 
   def save()
-    sql = 'INSERT INTO transactions (merchant_id, tag_id, charge)
+    sql = 'INSERT INTO transactions (merchant_id, stamp_id, charge)
           VALUES ($1, $2, $3)
           RETURNING *'
-    values = [@merchant_id, @tag_id, @charge]
+    values = [@merchant_id, @stamp_id, @charge]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     @date = results.first()['date']
@@ -38,10 +38,10 @@ class Transaction
 
   def update
     sql = 'UPDATE transactions
-          SET (merchant_id, tag_id, charge)
+          SET (merchant_id, stamp_id, charge)
           = ($1, $2, $3)
           WHERE id = $4'
-    values = [@merchant_id, @tag_id, @charge, @id]
+    values = [@merchant_id, @stamp_id, @charge, @id]
     results = SqlRunner.run(sql, values)
   end
 
@@ -65,11 +65,11 @@ class Transaction
     return Merchant.new( results.first )
   end
 
-  def tag_finder()
-    sql = "SELECT * FROM tags
+  def stamp_finder()
+    sql = "SELECT * FROM stamps
     WHERE id = $1"
-    values = [@tag_id]
+    values = [@stamp_id]
     results = SqlRunner.run( sql, values )
-    return Tag.new( results.first )
+    return Stamp.new( results.first )
   end
 end

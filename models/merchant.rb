@@ -4,7 +4,7 @@ class Merchant
 
   attr_reader :id, :name
 
-  def initialize(options)
+  destampnitialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
   end
@@ -52,10 +52,17 @@ class Merchant
     results = SqlRunner.run(sql)
   end
 
-  def tag_check()
-    sql = "SELECT * FROM tags INNER JOIN transactions ON tag_id = id WHERE merchant_id = $1;"
+  # def stamp_check()
+  #   sql = "SELECT z.* FROM zombies z INNER JOIN bitings b ON b.zombie_id = z.id WHERE b.victim_id = $1;"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map { |stamp| Stamp.new(stamp) }
+  # end
+
+  def zombies()
+    sql = "SELECT z.* FROM zombies z INNER JOIN bitings b ON b.zombie_id = z.id WHERE b.victim_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map { |tag| Tag.new(tag) }
+    return results.map { |zombie| Zombie.new(zombie) }
   end
 end

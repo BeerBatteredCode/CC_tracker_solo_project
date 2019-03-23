@@ -1,9 +1,9 @@
-require_relative('../models/tag')
+require_relative('../models/stamp')
 require_relative('../models/merchant')
 require_relative('../models/transaction')
 require('pry-byebug')
 
-Tag.delete_all
+Stamp.delete_all
 Merchant.delete_all
 Transaction.delete_all
 
@@ -21,33 +21,33 @@ merchant1.save
 merchant2.save
 merchant3.save
 
-tag1 = Tag.new ({
+stamp1 = Stamp.new ({
   'catagory' => 'shopping'
   })
-tag2 = Tag.new ({
+stamp2 = Stamp.new ({
   'catagory' => 'travel'
   })
-tag3 = Tag.new ({
+stamp3 = Stamp.new ({
   'catagory' => 'vice'
   })
 
-tag1.save
-tag2.save
-tag3.save
+stamp1.save
+stamp2.save
+stamp3.save
 
 transaction1 = Transaction.new ({
   'merchant_id' => merchant1.id,
-  'tag_id' => tag1.id,
+  'stamp_id' => stamp1.id,
   'charge' => '75.55',
   })
 transaction2 = Transaction.new ({
   'merchant_id' => merchant2.id,
-  'tag_id' => tag2.id,
+  'stamp_id' => stamp2.id,
   'charge' => '350.25',
   })
 transaction3 = Transaction.new ({
   'merchant_id' => merchant3.id,
-  'tag_id' => tag3.id,
+  'stamp_id' => stamp3.id,
   'charge' => '40.27',
   })
 
@@ -59,18 +59,18 @@ transaction3.save
 #   'name' => 'Tesco'
 #   })
 #
-# tag1 = Tag.new ({
+# stamp1 = Stamp.new ({
 #   'catagory' => 'extra shopping'
 #   })
 #
 # transaction1 = Transaction.new ({
 #   'merchant_id' => merchant1.id,
-#   'tag_id' => tag1.id,
+#   'stamp_id' => stamp1.id,
 #   'charge' => '59.50',
 #   })
 #
 # merchant1.update
-# tag1.update
+# stamp1.update
 # transaction1.update
 
 binding.pry

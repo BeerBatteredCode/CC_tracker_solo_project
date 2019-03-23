@@ -1,9 +1,9 @@
-<h1>Tag <%= @tag.catagory%></h1>
+<h1>Stamp <%= @stamp.catagory%></h1>
 
 <h3>Merchant:</h3>
 
 <ul>
-  <% @tag.catagory.each do |merchant| %>
+  <% @stamp.catagory.each do |merchant| %>
   <li><%= merchant.name %></li>
   <% end %>
 </ul>

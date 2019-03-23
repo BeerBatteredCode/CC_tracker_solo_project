@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class Tag
+class Stamp
 
   attr_reader :id, :catagory
 
@@ -10,7 +10,7 @@ class Tag
   end
 
   def save()
-    sql = 'INSERT INTO tags (catagory)
+    sql = 'INSERT INTO stamps (catagory)
           VALUES ($1)
           RETURNING id'
     values = [@catagory]
@@ -19,21 +19,21 @@ class Tag
   end
 
   def self.all()
-    sql = 'SELECT * FROM tags'
+    sql = 'SELECT * FROM stamps'
     results = SqlRunner.run(sql)
-    results.map { |tag| Tag.new(tag) }
+    results.map { |stamp| Stamp.new(stamp) }
   end
 
   def self.find(id)
-    sql = 'SELECT * FROM tags
+    sql = 'SELECT * FROM stamps
           WHERE id = $1'
     values = [id]
     results = SqlRunner.run(sql, values)
-    return Tag.new(results.first)
+    return Stamp.new(results.first)
   end
 
   def update
-    sql = 'UPDATE tags
+    sql = 'UPDATE stamps
           SET catagory = $1
           WHERE id = $2'
     values = [@catagory, @id]
@@ -41,14 +41,14 @@ class Tag
   end
 
   def self.destroy(id)
-    sql = 'DELETE FROM tags
+    sql = 'DELETE FROM stamps
           WHERE id = $1'
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = 'DELETE FROM tags'
+    sql = 'DELETE FROM stamps'
     results = SqlRunner.run(sql)
   end
 end

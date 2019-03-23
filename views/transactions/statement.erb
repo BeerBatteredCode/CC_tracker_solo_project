@@ -2,10 +2,10 @@
 
 <form action="/transactions" method="post">
   <label>
-  Select a tag:
-    <select name="tag_id">
-      <% for tag in @tag_list %>
-      <option value="<%= tag.id %>"><%= tag.catagory %></option>
+  Select a stamp:
+    <select name="stamp_id">
+      <% for stamp in @stamp_list %>
+      <option value="<%= stamp.id %>"><%= stamp.catagory %></option>
       <% end %>
     </select>
   </label>
@@ -19,5 +19,5 @@
     </select>
   </label>
 
-  <input class="btn btn--action" type='submit' value="Tag">
+  <input class="btn btn--action" type='submit' value="Stamp">
 </form>
