@@ -40,6 +40,13 @@ class Tag
     results = SqlRunner.run(sql, values)
   end
 
+  def self.destroy(id)
+    sql = 'DELETE FROM tags
+          WHERE id = $1'
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = 'DELETE FROM tags'
     results = SqlRunner.run(sql)
