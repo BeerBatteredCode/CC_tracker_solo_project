@@ -3,8 +3,9 @@ require_relative('../models/merchant')
 require_relative('../models/transaction')
 require('pry-byebug')
 
-# Tag.delete_all
-# Merchant.delete_all
+Tag.delete_all
+Merchant.delete_all
+Transaction.delete_all
 
 merchant1 = Merchant.new ({
   'name' => 'Sainsburys'
@@ -25,3 +26,6 @@ transaction1 = Transaction.new ({
   })
 
 transaction1.save
+
+binding.pry
+nil

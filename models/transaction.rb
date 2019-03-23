@@ -22,7 +22,7 @@ class Transaction
     @date = results.first()['date'].to_i
   end
 
-  def delete_all()
+  def self.delete_all()
     sql = 'DELETE FROM transactions'
     results = SqlRunner.run(sql)
   end
