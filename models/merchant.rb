@@ -40,6 +40,13 @@ class Merchant
     results = SqlRunner.run(sql, values)
   end
 
+  def self.destroy(id)
+    sql = 'DELETE FROM merchants
+          WHERE id = $1'
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = 'DELETE FROM merchants'
     results = SqlRunner.run(sql)
