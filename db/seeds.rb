@@ -27,10 +27,15 @@ transaction1 = Transaction.new ({
 
 transaction1.save
 
+merchant1 = Merchant.new ({
+  'name' => 'Tesco'
+  })
+
 tag1 = Tag.new ({
   'catagory' => 'extra shopping'
   })
 
+merchant1.update
 tag1.update
 
 binding.pry

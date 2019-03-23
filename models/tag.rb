@@ -25,16 +25,16 @@ class Tag
   end
 
   def self.find(id)
-    sql = "SELECT * FROM tags
-          WHERE id = $1"
+    sql = 'SELECT * FROM tags
+          WHERE id = $1'
     values = [id]
     results = SqlRunner.run(sql, values)
     return Tag.new(results.first)
   end
 
   def update
-    sql = "UPDATE tags SET catagory = $1
-    WHERE id = $2"
+    sql = 'UPDATE tags SET catagory = $1
+    WHERE id = $2'
     values = [@catagory, @id]
     results = SqlRunner.run(sql, values)
   end
