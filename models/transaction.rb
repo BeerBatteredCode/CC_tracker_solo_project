@@ -22,6 +22,12 @@ class Transaction
     @date = results.first()['date'].to_i
   end
 
+  def self.all
+    sql = 'SELECT * FROM transactions'
+    results = SqlRunner.run(sql)
+    results.map { |transaction| Transaction.new(transaction) }
+  end
+
   def self.delete_all()
     sql = 'DELETE FROM transactions'
     results = SqlRunner.run(sql)
