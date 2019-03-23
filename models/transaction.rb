@@ -56,4 +56,20 @@ class Transaction
     sql = 'DELETE FROM transactions'
     results = SqlRunner.run(sql)
   end
+
+  def merchant_finder()
+    sql = "SELECT * FROM merchants
+    WHERE id = $1"
+    values = [@merchant_id]
+    results = SqlRunner.run( sql, values )
+    return Merchant.new( results.first )
+  end
+
+  def tag_finder()
+    sql = "SELECT * FROM tags
+    WHERE id = $1"
+    values = [@tag_id]
+    results = SqlRunner.run( sql, values )
+    return Tag.new( results.first )
+  end
 end
