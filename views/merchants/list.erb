@@ -1,11 +1,9 @@
-<h1><%= @victim.name %> (victim)</h1>
+<h1><%= @merchant.name %> (Merchant)</h1>
 
-<p>Running Speed: <%= @victim.run_speed %></p>
-
-<h3>Bitten by:</h3>
+<h3>Tagged by:</h3>
 
 <ul>
-  <% @victim.zombies.each do |zombie| %>
-  <li><%= zombie.name %></li>
+  <% @merchant.tag_list.each do |tag| %>
+  <li><%= tag.catagory %></li>
   <% end %>
 </ul>

@@ -1,16 +1,14 @@
-<h1>Victims</h1>
+<h1>Merchants</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Speed</th>
   </tr>
-  <% for victim in @victims %>
+  <% for merchant in @merchant_list %>
   <tr>
-    <td><a href="/victims/<%= victim.id %>"><%= victim.name %></a></td>
+    <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
     <td>|</td>
-    <td><%= victim.run_speed %></td>
   </tr>
   <% end %>
 </table>
