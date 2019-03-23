@@ -51,4 +51,11 @@ class Merchant
     sql = 'DELETE FROM merchants'
     results = SqlRunner.run(sql)
   end
+
+  def tag_check()
+    sql = "SELECT * FROM tags INNER JOIN transactions ON tag_id = id WHERE merchant_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |tag| Tag.new(tag) }
+  end
 end
