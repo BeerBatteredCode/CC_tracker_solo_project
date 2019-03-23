@@ -1,15 +1,15 @@
-<h1>Bitings</h1>
+<h1>Transactions</h1>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/bitings/new">New attack!</a>
+  <a class="btn btn--action" href="/transactions/new">New transaction</a>
 </p>
 
 <ul>
-  <% for biting in @bitings %>
+  <% for transaction in @transaction_list %>
   <li>
-  <p><%= biting.zombie.name %> <%= @actions.sample %> <%= biting.victim.name %> </p>
+  <p><%= transaction.tag.catagory %> <%= transaction.merchant.name %> </p>
     <p>
-      <form action="/bitings/<%= biting.id %>/delete" method="POST">
+      <form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
     </p>
