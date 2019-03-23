@@ -19,7 +19,7 @@ class Transaction
     values = [@merchant_id, @tag_id, @charge]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
-    @date = results.first()['date'].to_i
+    @date = results.first()['date']
   end
 
   def self.all
