@@ -1,16 +1,16 @@
-<h1>Zombies</h1>
+<h1>Victims</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Type</th>
+    <th>Speed</th>
   </tr>
-  <% for zombie in @zombies %>
+  <% for victim in @victims %>
   <tr>
-    <td><a href="/zombies/<%= zombie.id %>"><%= zombie.name %></a></td>
+    <td><a href="/victims/<%= victim.id %>"><%= victim.name %></a></td>
     <td>|</td>
-    <td><%= zombie.type %></td>
+    <td><%= victim.run_speed %></td>
   </tr>
   <% end %>
 </table>
