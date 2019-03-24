@@ -10,5 +10,5 @@ end
 
 get '/stamps/:id' do
   @stamp = Stamp.find(params['id'].to_i)
-  erb(:"stamps/list")
+  erb(:"stamps/show")
 end

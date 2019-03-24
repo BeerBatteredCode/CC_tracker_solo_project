@@ -14,7 +14,7 @@ end
 get '/transactions/new' do
   @merchant_list = Merchant.all
   @stamp_list = Stamp.all
-  erb(:"transactions/statement")
+  erb(:"transactions/new")
 end
 
 post '/transactions' do
