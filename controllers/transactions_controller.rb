@@ -1,10 +1,10 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' ) if development?
-require( 'pry-byebug' )
-require_relative( '../models/transaction.rb' )
-require_relative( '../models/merchant.rb' )
-require_relative( '../models/stamp.rb' )
-also_reload( '../models/*' )
+require('sinatra' )
+require('sinatra/contrib/all' ) if development?
+require('pry-byebug' )
+require_relative('../models/transaction.rb')
+require_relative('../models/merchant.rb')
+require_relative('../models/stamp.rb')
+also_reload('../models/*')
 
 get '/transactions' do
   @transaction_list = Transaction.all

@@ -1,7 +1,7 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' ) if development?
-require_relative( '../models/stamp.rb' )
-also_reload( '../models/*' )
+require('sinatra')
+require('sinatra/contrib/all') if development?
+require_relative('../models/stamp.rb')
+also_reload('../models/*')
 
 get '/stamps' do
   @stamp_list = Stamp.all()
