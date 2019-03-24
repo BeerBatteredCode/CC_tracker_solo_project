@@ -1,3 +1,4 @@
+require_relative('../models/budget')
 require_relative('../models/stamp')
 require_relative('../models/merchant')
 require_relative('../models/transaction')
@@ -10,10 +11,28 @@ Budget.delete_all
 
 budget1 = Budget.new ({
   'label' => 'January',
-  'total' => '323.42',
+  'total' => '423.42',
   'starting' => '2019-01-13',
-  'ending' => '2019-02-20'
+  'ending' => '2019-02-13'
   })
+
+budget2 = Budget.new ({
+  'label' => 'February',
+  'total' => '323.34',
+  'starting' => '2019-02-13',
+  'ending' => '2019-03-13'
+  })
+
+budget3 = Budget.new ({
+  'label' => 'March',
+  'total' => '389.12',
+  'starting' => '2019-03-13',
+  'ending' => '2019-04-13'
+  })
+
+budget1.save
+budget2.save
+budget3.save
 
 merchant1 = Merchant.new ({
   'name' => 'Sainsburys'
@@ -46,16 +65,19 @@ stamp3.save
 transaction1 = Transaction.new ({
   'merchant_id' => merchant1.id,
   'stamp_id' => stamp1.id,
+  'budget_id' => budget1.id,
   'charge' => '75.55',
   })
 transaction2 = Transaction.new ({
   'merchant_id' => merchant2.id,
   'stamp_id' => stamp2.id,
+  'budget_id' => budget2.id,
   'charge' => '350.25',
   })
 transaction3 = Transaction.new ({
   'merchant_id' => merchant3.id,
   'stamp_id' => stamp3.id,
+  'budget_id' => budget3.id,
   'charge' => '40.27',
   })
 
@@ -63,6 +85,13 @@ transaction1.save
 transaction2.save
 transaction3.save
 
+# budget1 = Budget.new ({
+#   'label' => 'February',
+#   'total' => '323.42',
+#   'starting' => '2019-02-13',
+#   'ending' => '2019-02-20'
+#   })
+#
 # merchant1 = Merchant.new ({
 #   'name' => 'Tesco'
 #   })
@@ -80,6 +109,7 @@ transaction3.save
 # merchant1.update
 # stamp1.update
 # transaction1.update
+# budget1.update
 
 binding.pry
 nil
