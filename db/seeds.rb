@@ -22,13 +22,13 @@ merchant2.save
 merchant3.save
 
 stamp1 = Stamp.new ({
-  'catagory' => 'shopping'
+  'category' => 'shopping'
   })
 stamp2 = Stamp.new ({
-  'catagory' => 'travel'
+  'category' => 'travel'
   })
 stamp3 = Stamp.new ({
-  'catagory' => 'vice'
+  'category' => 'vice'
   })
 
 stamp1.save
@@ -60,7 +60,7 @@ transaction3.save
 #   })
 #
 # stamp1 = Stamp.new ({
-#   'catagory' => 'extra shopping'
+#   'category' => 'extra shopping'
 #   })
 #
 # transaction1 = Transaction.new ({

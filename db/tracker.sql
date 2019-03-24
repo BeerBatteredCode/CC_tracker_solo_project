@@ -4,7 +4,7 @@ DROP TABLE merchants;
 
 CREATE TABLE stamps (
   id SERIAL4 PRIMARY KEY,
-  catagory VARCHAR(255)
+  category VARCHAR(255)
 );
 
 CREATE TABLE merchants (

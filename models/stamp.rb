@@ -2,18 +2,18 @@ require_relative('../db/sql_runner')
 
 class Stamp
 
-  attr_reader :id, :catagory
+  attr_reader :id, :category
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @catagory = options['catagory']
+    @category = options['category']
   end
 
   def save()
-    sql = 'INSERT INTO stamps (catagory)
+    sql = 'INSERT INTO stamps (category)
           VALUES ($1)
           RETURNING id'
-    values = [@catagory]
+    values = [@category]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -34,9 +34,9 @@ class Stamp
 
   def update
     sql = 'UPDATE stamps
-          SET catagory = $1
+          SET category = $1
           WHERE id = $2'
-    values = [@catagory, @id]
+    values = [@category, @id]
     results = SqlRunner.run(sql, values)
   end
 
