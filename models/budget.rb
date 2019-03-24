@@ -44,7 +44,7 @@ class Budget
   end
 
   def self.destroy(id)
-    sql = 'DELETE FROM merchants
+    sql = 'DELETE FROM budgets
           WHERE id = $1'
     values = [id]
     SqlRunner.run(sql, values)
