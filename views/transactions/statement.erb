@@ -19,5 +19,14 @@
     </select>
   </label>
 
+  <label>
+    Select a Budget:
+    <select name="budget_id">
+      <% for budget in @budget_list %>
+      <option value="<%= budget.id %>"><%= budget.catagory %></option>
+      <% end %>
+    </select>
+  </label>
+
   <input class="btn btn--action" type='submit' value="Stamp">
 </form>

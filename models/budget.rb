@@ -54,4 +54,11 @@ class Budget
     sql = 'DELETE FROM budgets'
     results = SqlRunner.run(sql)
   end
+
+  def stamp_check()
+    sql = "SELECT s.* FROM stamps s INNER JOIN transactions t ON t.stamp_id = s.id WHERE t.budget_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |stamp| Stamp.new(stamp) }
+  end
 end

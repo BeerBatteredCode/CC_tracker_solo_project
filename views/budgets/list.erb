@@ -1,9 +1,9 @@
-<h1><%= @merchant.name %></h1>
+<h1><%= @budget.label %></h1>
 
-<h3>Stamp:</h3>
+<h3>Budget:</h3>
 
 <ul>
-  <% @merchant.stamp_check.each do |stamp| %>
-  <li><%= stamp.category %></li>
+  <% @budget.stamp_check.each do |stamp| %>
+  <li><%= budget.label %></li>
   <% end %>
 </ul>
