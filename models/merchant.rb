@@ -58,11 +58,4 @@ class Merchant
     results = SqlRunner.run(sql, values)
     return results.map { |stamp| Stamp.new(stamp) }
   end
-
-  def budget_check()
-    sql = "SELECT b.* FROM budgets b INNER JOIN transactions t ON t.budget_id = b.id WHERE t.merchant_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map { |budget| Budget.new(budget) }
-  end
 end

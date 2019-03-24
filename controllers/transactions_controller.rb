@@ -8,7 +8,7 @@ also_reload('../models/*')
 
 get '/transactions' do
   @transaction_list = Transaction.all
-  erb ( :"transactions/index" )
+  erb (:"transactions/index")
 end
 
 get '/transactions/new' do

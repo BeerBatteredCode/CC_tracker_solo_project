@@ -8,16 +8,16 @@ class Transaction
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
     @stamp_id = options['stamp_id'].to_i
-    @budget_id = options['budget_id'].to_i
+    # @budget_id = options['budget_id'].to_i
     @charge = options['charge'].to_f
     @date = options['date'].to_i if options['date']
   end
 
   def save()
-    sql = 'INSERT INTO transactions (merchant_id, stamp_id, budget_id, charge)
-          VALUES ($1, $2, $3, $4)
+    sql = 'INSERT INTO transactions (merchant_id, stamp_id, charge)
+          VALUES ($1, $2, $3)
           RETURNING *'
-    values = [@merchant_id, @stamp_id, @budget_id, @charge]
+    values = [@merchant_id, @stamp_id, @charge]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     @date = results.first()['date']
@@ -39,10 +39,10 @@ class Transaction
 
   def update
     sql = 'UPDATE transactions
-          SET (merchant_id, stamp_id, budget_id charge)
-          = ($1, $2, $3, $4)
-          WHERE id = $5'
-    values = [@merchant_id, @stamp_id, @budget_id, @charge, @id]
+          SET (merchant_id, stamp_id, charge)
+          = ($1, $2, $3)
+          WHERE id = $4'
+    values = [@merchant_id, @stamp_id, @charge, @id]
     results = SqlRunner.run(sql, values)
   end
 
@@ -72,13 +72,5 @@ class Transaction
     values = [@stamp_id]
     results = SqlRunner.run( sql, values )
     return Stamp.new( results.first )
-  end
-
-  def budget_finder()
-    sql = "SELECT * FROM budgets
-    WHERE id = $1"
-    values = [@budget_id]
-    results = SqlRunner.run( sql, values )
-    return Merchant.new( results.first )
   end
 end

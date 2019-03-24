@@ -5,7 +5,7 @@ also_reload('../models/*')
 
 get '/stamps' do
   @stamp_list = Stamp.all()
-  erb ( :"stamps/index" )
+  erb (:"stamps/index")
 end
 
 get '/stamps/:id' do

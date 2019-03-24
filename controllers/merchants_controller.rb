@@ -5,10 +5,10 @@ also_reload('../models/*')
 
 get '/merchants' do
   @merchant_list = Merchant.all()
-  erb ( :"merchants/index" )
+  erb (:"merchants/index")
 end
 
 get '/merchants/:id' do
   @merchant = Merchant.find(params['id'].to_i)
-  erb( :"merchants/list" )
+  erb(:"merchants/list")
 end
