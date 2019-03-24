@@ -58,11 +58,4 @@ class Merchant
     results = SqlRunner.run(sql, values)
     return results.map { |stamp| Stamp.new(stamp) }
   end
-
-  # def zombies()
-  #   sql = "SELECT z.* FROM zombies z INNER JOIN bitings b ON b.zombie_id = z.id WHERE b.victim_id = $1;"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |zombie| Zombie.new(zombie) }
-  # end
 end

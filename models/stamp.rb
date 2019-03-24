@@ -51,4 +51,11 @@ class Stamp
     sql = 'DELETE FROM stamps'
     results = SqlRunner.run(sql)
   end
+
+  def merchant_check()
+    sql = "SELECT m.* FROM merchants m INNER JOIN transactions t ON t.merchant_id = m.id WHERE t.stamp_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |merchant| Merchant.new(merchant) }
+  end
 end
