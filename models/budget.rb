@@ -36,10 +36,10 @@ class Budget
   end
 
   def update
-    sql = 'UPDATE merchants
-          SET name = $1
+    sql = 'UPDATE budgets
+          SET label = $1
           WHERE id = $2'
-    values = [@name, @id]
+    values = [@label, @id]
     results = SqlRunner.run(sql, values)
   end
 
