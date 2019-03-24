@@ -37,9 +37,9 @@ class Budget
 
   def update
     sql = 'UPDATE budgets
-          SET label = $1
-          WHERE id = $2'
-    values = [@label, @id]
+          SET (label, total, starting, ending) = ($1, $2, $3, $4)
+          WHERE id = $5'
+    values = [@label, @total, @starting, @ending, @id]
     results = SqlRunner.run(sql, values)
   end
 
@@ -51,8 +51,7 @@ class Budget
   end
 
   def self.delete_all
-    sql = 'DELETE FROM merchants'
+    sql = 'DELETE FROM budgets'
     results = SqlRunner.run(sql)
   end
-
 end
