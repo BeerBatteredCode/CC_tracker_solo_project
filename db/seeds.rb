@@ -6,6 +6,14 @@ require('pry-byebug')
 Stamp.delete_all
 Merchant.delete_all
 Transaction.delete_all
+Budget.delete_all
+
+budget1 = Budget.new ({
+  'label' => 'January',
+  'total' => '323.42',
+  'starting' => '2019-01-13',
+  'ending' => '2019-02-20'
+  })
 
 merchant1 = Merchant.new ({
   'name' => 'Sainsburys'
