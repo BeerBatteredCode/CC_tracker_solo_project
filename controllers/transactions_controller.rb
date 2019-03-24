@@ -23,6 +23,7 @@ post '/transactions' do
   redirect to("/transactions")
 end
 
+#DELETE
 post '/transactions/:id/delete' do
   Transaction.destroy(params[:id])
   redirect to("/transactions")

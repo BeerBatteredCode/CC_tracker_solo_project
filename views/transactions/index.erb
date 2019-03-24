@@ -7,10 +7,13 @@
 <ul>
   <% for transaction in @transaction_list %>
   <li>
-  <p><%= transaction.stamp_finder.category %> <%= transaction.merchant_finder.name %> </p>
+  <p><%= transaction.stamp_finder.category.capitalize %>: </p>
+  <p></p><%= transaction.merchant_finder.name %> </p>
+  <p><%= transaction.charge %></p>
+  <p><%= transaction.date %></p>
     <p>
       <form action="/transactions/<%= transaction.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
+        <input class="btn btn--danger" type="submit" value="Delete" />
       </form>
     </p>
   </li>

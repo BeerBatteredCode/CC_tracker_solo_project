@@ -8,9 +8,8 @@ class Transaction
     @id = options['id'].to_i if options['id']
     @merchant_id = options['merchant_id'].to_i
     @stamp_id = options['stamp_id'].to_i
-    # @budget_id = options['budget_id'].to_i
     @charge = options['charge'].to_f
-    @date = options['date'].to_i if options['date']
+    @date = options['date'] if options['date']
   end
 
   def save()
