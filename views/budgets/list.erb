@@ -4,6 +4,12 @@
 
 <ul>
   <% @budget.stamp_check.each do |stamp| %>
-  <li><%= budget.label %></li>
+  <li><%= stamp.catagory %></li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @budget.merchant_check.each do |merchant| %>
+  <li><%= merchant.name %></li>
   <% end %>
 </ul>

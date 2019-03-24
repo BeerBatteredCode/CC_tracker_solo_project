@@ -7,3 +7,9 @@
   <li><%= merchant.name %></li>
   <% end %>
 </ul>
+
+<ul>
+  <% @stamp.budget_check.each do |budget| %>
+  <li><%= budget.label %></li>
+  <% end %>
+</ul>
