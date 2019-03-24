@@ -73,4 +73,12 @@ class Transaction
     results = SqlRunner.run( sql, values )
     return Stamp.new( results.first )
   end
+
+  def budget_finder()
+    sql = "SELECT * FROM budgets
+    WHERE id = $1"
+    values = [@budget_id]
+    results = SqlRunner.run( sql, values )
+    return Merchant.new( results.first )
+  end
 end
