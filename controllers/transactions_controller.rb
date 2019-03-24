@@ -6,17 +6,20 @@ require_relative('../models/merchant.rb')
 require_relative('../models/stamp.rb')
 also_reload('../models/*')
 
+#INDEX
 get '/transactions' do
   @transaction_list = Transaction.all
   erb (:"transactions/index")
 end
 
+#NEW
 get '/transactions/new' do
   @merchant_list = Merchant.all
   @stamp_list = Stamp.all
   erb(:"transactions/new")
 end
 
+#SAVE
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
