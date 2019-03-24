@@ -2,6 +2,14 @@ DROP TABLE transactions;
 DROP TABLE stamps;
 DROP TABLE merchants;
 
+CREATE TABLE budget (
+  id SERIAL4 PRIMARY KEY,
+  label VARCHAR(255),
+  total FLOAT(24),
+  starting DATE,
+  ending DATE
+)
+
 CREATE TABLE stamps (
   id SERIAL4 PRIMARY KEY,
   category VARCHAR(255)
