@@ -24,15 +24,15 @@ class Budget
   def self.all
     sql = 'SELECT * FROM budgets'
     results = SqlRunner.run(sql)
-    results.map { |merchant| Merchant.new(merchant) }
+    results.map { |budget| Budget.new(budget) }
   end
 
   def self.find(id)
-    sql = 'SELECT * FROM merchants
+    sql = 'SELECT * FROM budgets
           WHERE id = $1'
     values = [id]
     results = SqlRunner.run(sql, values)
-    return Merchant.new(results.first)
+    return Budget.new(results.first)
   end
 
   def update
