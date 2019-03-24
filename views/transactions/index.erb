@@ -7,8 +7,8 @@
 <ul>
   <% for transaction in @transaction_list %>
   <li>
-  <p><%= transaction.stamp_finder.category.capitalize %>: </p>
-  <p></p><%= transaction.merchant_finder.name %> </p>
+  <p><%= transaction.stamp_finder.category.capitalize %> </p>
+  <p><%= transaction.merchant_finder.name %> </p>
   <p><%= transaction.charge %></p>
   <p><%= transaction.date %></p>
     <p>

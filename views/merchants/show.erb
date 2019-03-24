@@ -3,11 +3,11 @@
 <h3>Merchant details:</h3>
 
 <ul>
+  <li>ID: <%= @merchant.id %></li>
   <% @merchant.stamp_check.each do |stamp| %>
-  <li>ID: <%= stamp.id %></li>
     <li>Tag: <%= stamp.category.upcase %></li>
-      <form action="/merchants/<%= stamp.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="Delete" />
-      </form>
   <% end %>
+  <form action="/merchants/<%= @merchant.id %>/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="Delete" />
+  </form>
 </ul>

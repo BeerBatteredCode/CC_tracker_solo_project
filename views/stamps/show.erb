@@ -1,9 +1,13 @@
 <h1><%= @stamp.category%></h1>
 
-<h3>Merchant:</h3>
+<h3>Tag details:</h3>
 
 <ul>
+  <li>ID: <%= @stamp.id %></li>
   <% @stamp.merchant_check.each do |merchant| %>
-  <li><%= merchant.name %></li>
+    <li><%= merchant.name.upcase %></li>
   <% end %>
+  <form action="/stamps/<%= @stamp.id %>/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="Delete" />
+  </form>
 </ul>
