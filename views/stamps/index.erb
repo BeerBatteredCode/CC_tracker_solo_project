@@ -2,12 +2,12 @@
 
 <table>
   <tr>
-    <th>category</th>
+    <th>Category</th>
     <th></th>
   </tr>
   <% for stamp in @stamp_list %>
   <tr>
-    <td><a href="/stamp/<%= stamp.id %>"><%= stamp.category %></a></td>
+    <td><a href="/stamps/<%= stamp.id %>"><%= stamp.category %></a></td>
     <td>|</td>
   </tr>
   <% end %>
