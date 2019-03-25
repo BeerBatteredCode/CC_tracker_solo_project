@@ -13,7 +13,7 @@
 </ul>
 
 <ul>
-    <form action="/merchants/update<%= @merchant.id %>/edit" method="post">
+    <form action="/merchants/<%= @merchant.id %>/edit" method="post">
       <input type="text" name="name" placeholder="" value="<%= @merchant.name%>">
       <input class="btn btn--action" type='submit' value="Edit">
     </form>
