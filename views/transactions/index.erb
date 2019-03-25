@@ -6,16 +6,15 @@
 
 <ul>
   <% for transaction in @transaction_list %>
-  <li>
-  <p><%= transaction.stamp_finder.category.capitalize %> </p>
-  <p><%= transaction.merchant_finder.name %> </p>
-  <p><%= transaction.charge %></p>
-  <p><%= transaction.date %></p>
-    <p>
+    <td>T-ID:<%= transaction.id %></td>
+    <td>TAG:<%= transaction.stamp_finder.category.capitalize %> </td>
+    <td>MERC:<%= transaction.merchant_finder.name %> </td>
+    <td>CRGE: £<%= transaction.charge %></td>
+    <td>D/T:<%= transaction.date %></td>
+    <td>
       <form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="Delete" />
       </form>
-    </p>
-  </li>
+    </td>
   <% end %>
 </ul>
