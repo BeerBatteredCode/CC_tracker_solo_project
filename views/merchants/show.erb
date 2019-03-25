@@ -11,3 +11,10 @@
     <input class="btn btn--danger" type="submit" value="Delete" />
   </form>
 </ul>
+
+<ul>
+    <form action="/merchants/update<%= @merchant.id %>/edit" method="post">
+      <input type="text" name="name" placeholder="" value="<%= @merchant.name%>">
+      <input class="btn btn--action" type='submit' value="Edit">
+    </form>
+</ul>

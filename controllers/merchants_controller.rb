@@ -35,7 +35,7 @@ post '/merchants' do
 end
 
 #UPDATE
-post '/merchants/edit' do
+post '/merchants/:id/edit' do
   merchant = Merchant.new(params)
   merchant.update
   redirect to("/merchants")
