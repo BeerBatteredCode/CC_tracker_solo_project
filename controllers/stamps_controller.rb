@@ -10,6 +10,12 @@ get '/stamps' do
 end
 
 #NEW
+get '/stamps/new' do
+  @stamp_list = Stamp.all
+  erb(:"stamps/new")
+end
+
+#SHOW
 get '/stamps/:id' do
   @stamp = Stamp.find(params['id'].to_i)
   erb(:"stamps/show")
