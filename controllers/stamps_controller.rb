@@ -15,6 +15,12 @@ get '/stamps/new' do
   erb(:"stamps/new")
 end
 
+#EDIT
+get '/stamps/edit' do
+  @stamp_list = Stamp.all
+  erb(:"stamps/edit")
+end
+
 #SHOW
 get '/stamps/:id' do
   @stamp = Stamp.find(params['id'].to_i)
@@ -25,6 +31,13 @@ end
 post '/stamps' do
   stamp = Stamp.new(params)
   stamp.save
+  redirect to("/stamps")
+end
+
+#UPDATE
+post '/stamps/:id/edit' do
+  stamp = Stamp.new(params)
+  stamp.update
   redirect to("/stamps")
 end
 

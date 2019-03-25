@@ -11,3 +11,10 @@
     <input class="btn btn--danger" type="submit" value="Delete" />
   </form>
 </ul>
+
+<ul>
+    <form action="/stamps/<%= @stamp.id %>/edit" method="post">
+      <input type="text" name="catagory" placeholder="" value="<%= @stamp.name%>">
+      <input class="btn btn--action" type='submit' value="Edit">
+    </form>
+</ul>
