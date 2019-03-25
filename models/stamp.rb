@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Stamp
 
-  attr_reader :id, :category
+  attr_accessor :id, :category
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

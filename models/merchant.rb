@@ -53,7 +53,9 @@ class Merchant
   end
 
   def stamp_check()
-    sql = "SELECT s.* FROM stamps s INNER JOIN transactions t ON t.stamp_id = s.id WHERE t.merchant_id = $1;"
+    sql = "SELECT stamps.* FROM stamps
+          INNER JOIN transactions ON transactions.stamp_id = stamps.id
+          WHERE transactions.merchant_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |stamp| Stamp.new(stamp) }
