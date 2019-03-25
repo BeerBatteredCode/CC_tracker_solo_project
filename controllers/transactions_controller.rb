@@ -26,6 +26,13 @@ get '/transactions/:id' do
 end
 
 #EDIT - EDITS THE ABOVE^ SELECTED ID
+get 'transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id])
+  @transaction_list = Transaction.all
+  @merchant_list = Merchant.all
+  @stamp_list = Stamp.all
+  erb(:'transactions/edit')
+end
 
 #SAVE
 post '/transactions' do
