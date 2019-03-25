@@ -19,6 +19,12 @@ get '/transactions/new' do
   erb(:"transactions/new")
 end
 
+#SHOW - TAKES YOU TO INDIVIDUAL TRANSACTIONS
+get '/transactions/:id' do
+  @transaction = Transaction.find(params[:id])
+  erb(:"transactions/show")
+end
+
 #SAVE
 post '/transactions' do
   transaction = Transaction.new(params)
