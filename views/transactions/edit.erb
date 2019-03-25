@@ -1,1 +1,20 @@
 <h2>Hello this is working now, well done!</h2>
+
+<form class="" action="/transactions/<%=@transaction.id%>" method="post">
+
+  <label for="charge">Charge:</label>
+  <input type="number" name="charge" step = "0.01" id="charge" value="<%=@transaction.charge%>"/>
+
+  <label for="merchant">Merchant:</label>
+  <select name="merchant_id" id="merchant_select">
+    <%= @merchant_list.each do |merchant| %>
+      <%= if merchant.id == @transaction.merchant_id %>
+        <option value=<%= merchant.id %> selected><%= merchant.name.capitalize %></option>
+      <% else %>
+        <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+
+</form>
