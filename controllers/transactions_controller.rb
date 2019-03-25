@@ -25,6 +25,8 @@ get '/transactions/:id' do
   erb(:"transactions/show")
 end
 
+#EDIT - EDITS THE ABOVE^ SELECTED ID
+
 #SAVE
 post '/transactions' do
   transaction = Transaction.new(params)

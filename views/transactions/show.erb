@@ -1,5 +1,9 @@
-<h1>Hello this is working now</h1>
+<h1>Transaction <%= @transaction.id %> details</h1>
 
-
+<p>Transation ID:<%= @transaction.id %></td>
+<p>Tagged as:<%= @transaction.stamp_finder.category.capitalize %> </p>
+<p>Merchant:<%= @transaction.merchant_finder.name %> </p>
+<p>Charge: £<%= @transaction.charge %></p>
+<p>Date & Time:<%= @transaction.date %></p>
 
 <a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
