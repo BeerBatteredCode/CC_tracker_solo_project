@@ -41,6 +41,7 @@ post '/transactions' do
   redirect to("/transactions")
 end
 
+#POST UPDATE
 post '/transactions/:id' do
   transaction = Transaction.new(params)
   transaction.update

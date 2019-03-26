@@ -73,4 +73,15 @@ class Transaction
     results = SqlRunner.run( sql, values )
     return Stamp.new( results.first )
   end
+
+  def calc_charity_total
+    sql = "SELECT * FROM transactions WHERE is_charitable = true"
+    results = SqlRunner.run(sql)
+    total = 0
+    results.each do |result|
+      result.charge += total
+    end
+    return total
+  end
+
 end

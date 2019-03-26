@@ -51,7 +51,7 @@ transaction3 = Transaction.new ({
   'merchant_id' => merchant3.id,
   'stamp_id' => stamp3.id,
   'charge' => '40.27',
-  'is_charitable' => true
+  'is_charitable' => false
   })
 
 transaction1.save
