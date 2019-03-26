@@ -41,6 +41,12 @@ post '/transactions' do
   redirect to("/transactions")
 end
 
+post '/transactions/:id' do
+  transaction = Transaction.new(params)
+  transaction.update
+  redirect to "/transactions/#{params[:id]}"
+end
+
 #DELETE
 post '/transactions/:id/delete' do
   Transaction.destroy(params[:id])

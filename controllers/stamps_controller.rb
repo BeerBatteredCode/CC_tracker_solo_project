@@ -41,6 +41,7 @@ post '/stamps/:id/edit' do
   redirect to("/stamps")
 end
 
+
 #DELETE
 post '/stamps/:id/delete' do
   Stamp.destroy(params[:id])

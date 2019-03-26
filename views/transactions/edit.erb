@@ -1,20 +1,32 @@
 <h2>Hello this is working now, well done!</h2>
 
-<form class="" action="/transactions/<%=@transaction.id%>" method="post">
+<form action="/transactions/<%=@transaction.id%>" method="post">
 
-  <label for="charge">Charge:</label>
-  <input type="number" name="charge" step = "0.01" id="charge" value="<%=@transaction.charge%>"/>
+    <label for="charge">Charge:</label>
+    <input type="number" name="charge" step = "0.01" id="charge" value="<%=@transaction.charge%>"/>
 
-  <label for="merchant">Merchant:</label>
-  <select name="merchant_id" id="merchant_select">
-    <%= @merchant_list.each do |merchant| %>
-      <%= if merchant.id == @transaction.merchant_id %>
-        <option value=<%= merchant.id %> selected><%= merchant.name.capitalize %></option>
-      <% else %>
-        <option value=<%= merchant.id %>><%= merchant.name.capitalize %></option>
+    <label>Tag:</label>
+    <select name="stamp_id">
+      <% @stamp_list.each do |stamp| %>
+        <% if stamp.id == @transaction.stamp_id %>
+          <option value=<%= stamp.id %> selected><%= stamp.category %></option>
+        <% else %>
+          <option value=<%= stamp.id %>><%= stamp.category %></option>
+        <% end %>
       <% end %>
-    <% end %>
-  </select>
+    </select>
 
+    <label>Merchant:</label>
+    <select name="merchant_id">
+      <% @merchant_list.each do |merchant| %>
+        <% if merchant.id == @transaction.merchant_id %>
+          <option value=<%= merchant.id %> selected><%= merchant.name %></option>
+        <% else %>
+          <option value=<%= merchant.id %>><%= merchant.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+
+    <input type="submit" value="Update"/>
 
 </form>
