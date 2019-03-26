@@ -39,16 +39,19 @@ transaction1 = Transaction.new ({
   'merchant_id' => merchant1.id,
   'stamp_id' => stamp1.id,
   'charge' => '75.55',
+  'is_charitable' => false
   })
 transaction2 = Transaction.new ({
   'merchant_id' => merchant2.id,
   'stamp_id' => stamp2.id,
   'charge' => '350.25',
+  'is_charitable' => false
   })
 transaction3 = Transaction.new ({
   'merchant_id' => merchant3.id,
   'stamp_id' => stamp3.id,
   'charge' => '40.27',
+  'is_charitable' => true
   })
 
 transaction1.save

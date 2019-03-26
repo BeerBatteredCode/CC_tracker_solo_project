@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Transaction
 
-  attr_accessor :id, :merchant_id, :stamp_id, :budget_id, :charge, :date
+  attr_accessor :id, :merchant_id, :stamp_id, :budget_id, :charge, :is_charitable, :date
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -14,7 +14,7 @@ class Transaction
   end
 
   def save()
-    sql = 'INSERT INTO transactions (merchant_id, stamp_id, charge)
+    sql = 'INSERT INTO transactions (merchant_id, stamp_id, charge, is_charitable)
           VALUES ($1, $2, $3, $4)
           RETURNING *'
     values = [@merchant_id, @stamp_id, @charge, @is_charitable]
