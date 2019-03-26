@@ -9,6 +9,7 @@ also_reload('../models/*')
 #INDEX
 get '/transactions' do
   @transaction_list = Transaction.all
+  @charity_total = Transaction.calc_charity_total
   erb (:"transactions/index")
 end
 

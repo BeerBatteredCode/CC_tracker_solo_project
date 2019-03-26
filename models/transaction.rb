@@ -74,7 +74,7 @@ class Transaction
     return Stamp.new( results.first )
   end
 
-  def calc_charity_total
+  def self.calc_charity_total
     sql = "SELECT * FROM transactions WHERE is_charitable = true"
     results = SqlRunner.run(sql)
     total = 0
