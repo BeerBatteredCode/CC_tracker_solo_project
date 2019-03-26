@@ -9,14 +9,15 @@ class Transaction
     @merchant_id = options['merchant_id'].to_i
     @stamp_id = options['stamp_id'].to_i
     @charge = options['charge'].to_f
+    @is_charitable = options['is_charitable']
     @date = options['date'] if options['date']
   end
 
   def save()
     sql = 'INSERT INTO transactions (merchant_id, stamp_id, charge)
-          VALUES ($1, $2, $3)
+          VALUES ($1, $2, $3, $4)
           RETURNING *'
-    values = [@merchant_id, @stamp_id, @charge]
+    values = [@merchant_id, @stamp_id, @charge, @is_charitable]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
     @date = results.first()['date']
@@ -38,10 +39,10 @@ class Transaction
 
   def update
     sql = 'UPDATE transactions
-          SET (merchant_id, stamp_id, charge)
-          = ($1, $2, $3)
-          WHERE id = $4'
-    values = [@merchant_id, @stamp_id, @charge, @id]
+          SET (merchant_id, stamp_id, charge, is_charitable)
+          = ($1, $2, $3, $4)
+          WHERE id = $5'
+    values = [@merchant_id, @stamp_id, @charge, @is_charitable, @id]
     results = SqlRunner.run(sql, values)
   end
 

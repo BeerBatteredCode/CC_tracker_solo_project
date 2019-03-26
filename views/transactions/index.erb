@@ -18,10 +18,10 @@
       </form>
     </td>
     <td>
-      <form action="/action_page.php">
+      <form action="/transactions/<%= transaction.id %>/charitable" method="POST">
         <input type="checkbox" name="vehicle" value="Charity" unchecked>
+        <input type="submit" value="Submit">
       </form>
     </td>
   <% end %>
 </ul>
-<input type="submit" value="Submit">

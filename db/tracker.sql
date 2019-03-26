@@ -17,5 +17,6 @@ CREATE TABLE transactions (
   stamp_id INT4 REFERENCES stamps(id) ON DELETE CASCADE,
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
   charge FLOAT(24),
+  is_charitable BOOLEAN,
   date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
