@@ -82,6 +82,11 @@ class Transaction
     return total['sum'].to_f
   end
 
+  def percentage_to_charity( num )
+    total = Transaction.calc_charity_total()
+    return total / 100 * num
+  end
+
   def self.find_transaction_date(date)
     sql = 'SELECT * FROM transactions
           INNER JOIN merchants

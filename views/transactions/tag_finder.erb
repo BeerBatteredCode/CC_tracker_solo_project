@@ -10,9 +10,9 @@
   <% @matching_stamp.each do |transaction| %>
   <tr>
     <td><%= transaction.id %></td>
-    <td><%= transaction.merchant_finder.name %></td>
+    <td><%= transaction.merchant_finder.name.capitalize %></td>
     <td><%= transaction.charge %></td>
-    <td><%= transaction.stamp_finder.category %></td>
+    <td><%= transaction.stamp_finder.category.capitalize %></td>
     <td><%= transaction.date %></td>
   </tr>
   <% end %>

@@ -1,5 +1,31 @@
 <h1>Transactions</h1>
 
+<form class="" action="/transactions/date_finder" method="GET">
+ <label class="" for="">
+   Filter by date:
+     <input id="" type="date" name="date">
+     <input type="submit" value="filter results">
+ </label>
+</form>
+
+<form class="" action="/transactions/merchant_finder" method="GET">
+ <label class="" for="">
+   Filter by merchant:
+     <input id="" type="text" name="name">
+     <input type="submit" value="filter results">
+ </label>
+</form>
+
+<form class="" action="/transactions/tag_finder" method="GET">
+ <label class="" for="">
+   Filter by tag:
+     <input id="" type="text" name="category">
+     <input type="submit" value="filter results">
+ </label>
+</form>
+
+<a class="btn btn--action" href="/transactions/new">New transaction</a>
+
 <div class="">
 <table>
   <% for transaction in @transaction_list %>
@@ -29,13 +55,3 @@
     <td></td>
   </table>
 </ul>
-
-<form class="" action="/transactions/date_finder" method="GET">
- <label class="" for="">
-   Filter by date:
-     <input id="" type="date" name="date">
-     <input type="submit" value="filter results">
- </label>
-</form>
-
-<a class="btn btn--action" href="/transactions/new">New transaction</a>
