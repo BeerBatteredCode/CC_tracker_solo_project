@@ -27,21 +27,7 @@ get '/transactions/new' do
   erb(:"transactions/new")
 end
 
-#SHOW - TAKES YOU TO INDIVIDUAL TRANSACTIONS
-get '/transactions/:id' do
-  @transaction = Transaction.find(params[:id])
-  erb(:"transactions/show")
-end
-
-#EDIT - EDITS THE ABOVE^ SELECTED ID
-get '/transactions/:id/edit' do
-  @transaction = Transaction.find(params[:id])
-  @transaction_list = Transaction.all
-  @merchant_list = Merchant.all
-  @stamp_list = Stamp.all
-  erb(:'transactions/edit')
-end
-
+#CHECK SPECIFIC TIME
 get '/transactions/date_finder' do
   @matching_dates = Transaction.find_transaction_date( params[:date])
   erb( :'/transactions/date_finder')
@@ -65,4 +51,19 @@ end
 post '/transactions/:id/delete' do
   Transaction.destroy(params[:id])
   redirect to("/transactions")
+end
+
+#SHOW - TAKES YOU TO INDIVIDUAL TRANSACTIONS
+get '/transactions/:id' do
+  @transaction = Transaction.find(params[:id])
+  erb(:"transactions/show")
+end
+
+#EDIT - EDITS THE ABOVE^ SELECTED ID
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id])
+  @transaction_list = Transaction.all
+  @merchant_list = Merchant.all
+  @stamp_list = Stamp.all
+  erb(:'transactions/edit')
 end

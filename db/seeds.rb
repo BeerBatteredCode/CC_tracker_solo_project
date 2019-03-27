@@ -76,6 +76,7 @@ transaction3.save
 # stamp1.update
 # transaction1.update
 
-check = Merchant.merchant_total
+
+check = Transaction.find_transaction_date('2019-03-27')
 binding.pry
 nil

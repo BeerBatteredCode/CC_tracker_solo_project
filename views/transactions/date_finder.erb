@@ -6,13 +6,14 @@
     <th>Tag:</th>
     <th>Date/Time:</th>
   </thead>
-  
+
   <% @matching_dates.each do |transaction| %>
   <tr>
     <td><%= transaction.id %></td>
-    <td><%= transaction.merchant_finder %></td>
+    <td><%= transaction.merchant_finder.name %></td>
     <td><%= transaction.charge %></td>
-    <td><%= transaction.stamp_finder %></td>
+    <td><%= transaction.stamp_finder.category %></td>
     <td><%= transaction.date %></td>
   </tr>
+  <% end %>
 </table>

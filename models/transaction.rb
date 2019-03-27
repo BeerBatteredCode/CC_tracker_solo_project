@@ -86,11 +86,11 @@ class Transaction
     sql = 'SELECT * FROM transactions
           INNER JOIN merchants
           ON transactions.merchant_id = merchants.id
-          INNER JOIN tags
-          ON transactions.tag_id = tags.id
+          INNER JOIN stamps
+          ON transactions.stamp_id = stamps.id
           WHERE current_date = $1'
     values = [date]
     result = SqlRunner.run(sql, values)
-    return result.map { |date| Transaction.new( date) }
+    return result.map { |check| Transaction.new(check) }
   end
 end

@@ -1,20 +1,6 @@
 <h1>Transactions</h1>
 
-<table>
-  <td>
-    <a class="btn btn--action" href="/transactions/new">New transaction</a>
-  </td>
-  <tr>
-    <td>
-      <form action="/transactions">
-      Select date:
-      <input type="date" name="chosen_day">
-      <input type="submit" value="Send">
-      </form>
-    </td>
-  </tr>
-</table>
-
+<div class="">
 <table>
   <% for transaction in @transaction_list %>
     <tr>
@@ -33,6 +19,7 @@
   <% end %>
   </tr>
 </table>
+</div>
 
 <ul>
   <table>
@@ -42,3 +29,13 @@
     <td></td>
   </table>
 </ul>
+
+<form class="" action="/transactions/date_finder" method="GET">
+ <label class="" for="">
+   Filter by date:
+     <input id="" type="date" name="date">
+     <input type="submit" value="filter results">
+ </label>
+</form>
+
+<a class="btn btn--action" href="/transactions/new">New transaction</a>
