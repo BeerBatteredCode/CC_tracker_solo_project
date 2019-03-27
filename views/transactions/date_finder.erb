@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>ID:</th>
+    <th>Merchant:</th>
+    <th>Charge:</th>
+    <th>Tag:</th>
+    <th>Date/Time:</th>
+  </thead>
+  
+  <% @matching_dates.each do |transaction| %>
+  <tr>
+    <td><%= transaction.id %></td>
+    <td><%= transaction.merchant_finder %></td>
+    <td><%= transaction.charge %></td>
+    <td><%= transaction.stamp_finder %></td>
+    <td><%= transaction.date %></td>
+  </tr>
+</table>

@@ -68,7 +68,7 @@ class Transaction
 
   def stamp_finder()
     sql = "SELECT * FROM stamps
-    WHERE id = $1"
+          WHERE id = $1"
     values = [@stamp_id]
     results = SqlRunner.run( sql, values )
     return Stamp.new( results.first )
@@ -76,9 +76,21 @@ class Transaction
 
   def self.calc_charity_total
     sql = "SELECT SUM(transactions.charge)
-    FROM transactions
-    WHERE is_charitable = true"
+          FROM transactions
+          WHERE is_charitable = true"
     total = SqlRunner.run(sql).first
     return total['sum'].to_f
+  end
+
+  def self.find_transaction_date(date)
+    sql = 'SELECT * FROM transactions
+          INNER JOIN merchants
+          ON transactions.merchant_id = merchants.id
+          INNER JOIN tags
+          ON transactions.tag_id = tags.id
+          WHERE current_date = $1'
+    values = [date]
+    result = SqlRunner.run(sql, values)
+    return result.map { |date| Transaction.new( date) }
   end
 end
