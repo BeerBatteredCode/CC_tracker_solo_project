@@ -33,6 +33,18 @@ get '/transactions/date_finder' do
   erb( :'/transactions/date_finder')
 end
 
+#CHECK SPECIFIC MERCHANT
+get '/transactions/merchant_finder' do
+  @matching_merchant = Transaction.find_by_merchant( params[:name])
+  erb( :'/transactions/merchant_finder')
+end
+
+#CHECK SPECIFIC STAMP
+get '/transactions/tag_finder' do
+  @matching_merchant = Transaction.find_by_stamp( params[:category])
+  erb( :'/transactions/tag_finder')
+end
+
 #SAVE
 post '/transactions' do
   transaction = Transaction.new(params)

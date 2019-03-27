@@ -93,4 +93,28 @@ class Transaction
     result = SqlRunner.run(sql, values)
     return result.map { |check| Transaction.new(check) }
   end
+
+  def self.find_by_merchant(merchant)
+    sql = 'SELECT * FROM transactions
+          INNER JOIN merchants
+          ON transactions.merchant_id = merchants.id
+          INNER JOIN stamps
+          ON transactions.stamp_id = stamps.id
+          WHERE name = $1'
+    values = [merchant]
+    result = SqlRunner.run(sql, values)
+    return result.map { |check| Transaction.new(check) }
+  end
+
+  def self.find_by_stamp(stamp)
+    sql = 'SELECT * FROM transactions
+          INNER JOIN merchants
+          ON transactions.merchant_id = merchants.id
+          INNER JOIN stamps
+          ON transactions.stamp_id = stamps.id
+          WHERE category = $1'
+    values = [stamp]
+    result = SqlRunner.run(sql, values)
+    return result.map { |check| Transaction.new(check) }
+  end
 end
