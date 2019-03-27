@@ -1,11 +1,23 @@
 <h1>Transactions</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/transactions/new">New transaction</a>
-</p>
+<table>
+  <td>
+    <a class="btn btn--action" href="/transactions/new">New transaction</a>
+  </td>
+  <tr>
+    <td>
+      <form action="/transactions">
+      Select date:
+      <input type="date" name="chosen_day">
+      <input type="submit" value="Send">
+      </form>
+    </td>
+  </tr>
+</table>
 
-<ul>
+<table>
   <% for transaction in @transaction_list %>
+    <tr>
     <td>T-ID:<%= transaction.id %></td>
     <td>TAG:<%= transaction.stamp_finder.category.capitalize %> </td>
     <td>MERC:<%= transaction.merchant_finder.name %> </td>
@@ -19,13 +31,14 @@
       </form>
     </td>
   <% end %>
-</ul>
+  </tr>
+</table>
 
 <ul>
   <table>
     <td></td>
-    <td>Charity Total</td>
+    <td>Charity Total:</td>
+    <td>£<%= @charity_total%></td>
     <td></td>
-    <td><%= @charity_total%></td>
   </table>
 </ul>

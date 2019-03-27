@@ -60,4 +60,11 @@ class Merchant
     results = SqlRunner.run(sql, values)
     return results.map { |stamp| Stamp.new(stamp) }
   end
+
+  def self.merchant_total
+    sql = "SELECT * FROM merchants"
+    total = SqlRunner.run(sql).first
+    return total.count
+  end
+
 end

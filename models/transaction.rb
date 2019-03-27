@@ -75,13 +75,10 @@ class Transaction
   end
 
   def self.calc_charity_total
-    sql = "SELECT * FROM transactions WHERE is_charitable = true"
-    results = SqlRunner.run(sql)
-    total = 0
-    results.each do |result|
-      result.charge += total
-    end
-    return total
+    sql = "SELECT SUM(transactions.charge)
+    FROM transactions
+    WHERE is_charitable = true"
+    total = SqlRunner.run(sql).first
+    return total['sum'].to_f
   end
-
 end

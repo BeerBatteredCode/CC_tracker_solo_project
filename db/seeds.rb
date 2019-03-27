@@ -51,7 +51,7 @@ transaction3 = Transaction.new ({
   'merchant_id' => merchant3.id,
   'stamp_id' => stamp3.id,
   'charge' => '40.27',
-  'is_charitable' => false
+  'is_charitable' => true
   })
 
 transaction1.save
@@ -76,5 +76,6 @@ transaction3.save
 # stamp1.update
 # transaction1.update
 
+check = Merchant.merchant_total
 binding.pry
 nil

@@ -13,6 +13,12 @@ get '/transactions' do
   erb (:"transactions/index")
 end
 
+get '/transactions/filter' do
+  @transaction_list = Transaction.all
+  @charity_total = Transaction.calc_charity_total
+  erb (:"transactions/index")
+end
+
 #NEW
 get '/transactions/new' do
   @merchant_list = Merchant.all
