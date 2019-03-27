@@ -41,7 +41,7 @@ end
 
 #CHECK SPECIFIC STAMP
 get '/transactions/tag_finder' do
-  @matching_merchant = Transaction.find_by_stamp( params[:category])
+  @matching_stamp = Transaction.find_by_stamp( params[:category])
   erb( :'/transactions/tag_finder')
 end
 
