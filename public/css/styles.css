@@ -75,6 +75,24 @@ html, body {
     background-color: #ff8000;
 } */
 
+.merc_table {
+ margin-left: auto;
+ margin-right: auto;
+ align-content: center;
+ margin-top: 2em;
+ border-collapse: collapse;
+}
+.merc_table td,
+.merc_table th {
+ padding-top: 5px;
+ padding-bottom: 10px;
+ padding-right: 20px;
+ padding-left: 20px;
+ border: 1px solid #c02109;
+ background-color: #00000050;
+ text-align: center;
+}
+
 .stamp_table {
  margin-left: auto;
  margin-right: auto;
@@ -84,6 +102,24 @@ html, body {
 }
 .stamp_table td,
 .stamp_table th {
+ padding-top: 5px;
+ padding-bottom: 10px;
+ padding-right: 20px;
+ padding-left: 20px;
+ border: 1px solid #c02109;
+ background-color: #00000050;
+ text-align: center;
+}
+
+.trans_table {
+ margin-left: auto;
+ margin-right: auto;
+ align-content: center;
+ margin-top: 2em;
+ border-collapse: collapse;
+}
+.trans_table td,
+.trans_table th {
  padding-top: 5px;
  padding-bottom: 10px;
  padding-right: 20px;

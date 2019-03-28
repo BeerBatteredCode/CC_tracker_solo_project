@@ -254,6 +254,6 @@ transaction18.save
 # transaction1.update
 
 
-check = Transaction.find_transaction_date('2019-03-27')
+# check = Transaction.find_transaction_date('2019-03-27')
 binding.pry
 nil

@@ -24,26 +24,33 @@
  </label>
 </form>
 
-<a class="btn btn--action" href="/transactions/new">New transaction</a>
+<a class="" href="/transactions/new">New transaction</a>
 
-<div class="">
+<div class="trans_table">
 <table>
+  <tr>
+    <td>ID</td>
+    <td>TAG</td>
+    <td>MERCHANT</td>
+    <td>CHARGE</td>
+    <td>DATE</td>
+    <td>VIEW</td>
+    <td>DELETE</td>
+  </tr>
   <% for transaction in @transaction_list %>
     <tr>
-    <td>T-ID:<%= transaction.id %></td>
-    <td>TAG:<%= transaction.stamp_finder.category.capitalize %> </td>
-    <td>MERC:<%= transaction.merchant_finder.name %> </td>
-    <td>CRGE: £<%= transaction.charge %></td>
-    <td>D/T:<%= transaction.date %></td>
-
-    <td><a href="/transactions/<%= transaction.id %>">View</a></td>
-    <td>
-      <form action="/transactions/<%= transaction.id %>/delete" method="POST">
+      <td><%= transaction.id %></td>
+      <td><%= transaction.stamp_finder.category.capitalize %> </td>
+      <td><%= transaction.merchant_finder.name %> </td>
+      <td>£<%= transaction.charge %></td>
+      <td><%= transaction.date %></td>
+      <td><a href="/transactions/<%= transaction.id %>">
+        <img alt="paw view" src="/images/paw1.png"></td>
+      <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="Delete" />
-      </form>
-    </td>
+      </form></td>
+    </tr>
   <% end %>
-  </tr>
 </table>
 </div>
 
