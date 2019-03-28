@@ -8,125 +8,293 @@ html, body {
   background-color: #FFF9EC;
 }
 
+
+/* table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+} */
+
+input[type=text] {
+  height: 30px;
+  outline: none;
+  border: 4px solid #FF860060;
+  border-color: #FF860060;
+  background-color: white;
+  font-size: 16px;
+}
+
+input[type=date] {
+  height: 30px;
+  outline: none;
+  margin-left: 70px;
+  border: 4px solid #FF860060;
+  border-color: #FF860060;
+  background-color: white;
+  font-size: 16px;
+}
+
+.textbox_extra {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .background_image {
   display: flex;
   justify-content: center;
   position: sticky;
 }
 
-/* #header {
-  width: 100%;
-  display: flex;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: rgb(255, 134, 0, 0.8)
-} */
-
-
 .main-nav {
-    font-family: "Yanone Kaffeesatz";
-    font-size: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: 20px;
-    padding-right: 150px;
-    padding-left: 150px;
-    background-color: rgb(255, 134, 0, 0.8)
+  font-family: monospace;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 20px;
+  padding-right: 150px;
+  padding-left: 150px;
+  background-color: rgb(255, 134, 0, 0.8)
 }
 
 .main-nav li {
-    display: inline-block;
-    margin-left: 40px;
+  display: inline-block;
+  margin-left: 40px;
 }
 
 .main-nav li a:link,
 .main-nav li a:visited {
-    padding: 8px 0;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 90%;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 1s;
+  padding: 2px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 1s;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #fcd670;
+  border-bottom: 2px solid #fcd670;
 }
 
-
-/* #header a {
-  color: black;
-} */
-
 .doggie {
-  /* margin-left: 40em; */
-  /* margin-bottom: 1em; */
+  margin-top: 5em;
   position: absolute;
   bottom: 120px;
   right: 0px;
 }
 
-/* .btn:hover,
-.btn:active {
-    background-color: #ff8000;
-} */
+#searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
-.merc_table {
- margin-left: auto;
- margin-right: auto;
- align-content: center;
- margin-top: 2em;
- border-collapse: collapse;
+/* .merc_table {
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+  border-collapse: collapse;
 }
 .merc_table td,
 .merc_table th {
- padding-top: 5px;
- padding-bottom: 10px;
- padding-right: 20px;
- padding-left: 20px;
- border: 1px solid #c02109;
- background-color: #00000050;
- text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: 1px solid #c02109;
+  background-color: #00000050;
+  text-align: center;
 }
 
 .stamp_table {
- margin-left: auto;
- margin-right: auto;
- align-content: center;
- margin-top: 2em;
- border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+  border-collapse: collapse;
 }
 .stamp_table td,
 .stamp_table th {
- padding-top: 5px;
- padding-bottom: 10px;
- padding-right: 20px;
- padding-left: 20px;
- border: 1px solid #c02109;
- background-color: #00000050;
- text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: 1px solid #c02109;
+  background-color: #00000050;
+  text-align: center;
+} */
+
+/* #maria {
+  border-radius: 10px;
+  overflow: hidden;
+} */
+
+.merc_table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+}
+.merc_table td,
+.merc_table th {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.stamp_table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+}
+.stamp_table td,
+.stamp_table th {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
 }
 
 .trans_table {
- margin-left: auto;
- margin-right: auto;
- align-content: center;
- margin-top: 2em;
- border-collapse: collapse;
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
 }
 .trans_table td,
 .trans_table th {
- padding-top: 5px;
- padding-bottom: 10px;
- padding-right: 20px;
- padding-left: 20px;
- border: 1px solid #c02109;
- background-color: #00000050;
- text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.date_table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+}
+.date_table td,
+.date_table th {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.msearch_table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+}
+.msearch_table td,
+.msearch_table th {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.trans_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.trans_table tr:nth-child(even) {
+  background-color: #FF630060;
+}
+
+.merc_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.merc_table tr:nth-child(even) {
+  background-color: #FF630060;
+}
+
+.stamp_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.stamp_table tr:nth-child(even) {
+  background-color: #FF630060;
+}
+
+.date_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.date_table tr:nth-child(even) {
+  background-color: #FF630060;
+}
+
+.msearch_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.msearch_table tr:nth-child(even) {
+  background-color: #FF630060;
 }
 
 body {
@@ -153,42 +321,38 @@ body {
   color: red;
 }
 
-#footer_block {
 
+
+#footer_block {
   background: black;
   padding-top: 1em;
   padding-bottom: 1em;
-  margin-top: 3em;
+  margin-top: 12em;
   position: absolute;
   width: 100%;
 }
 
-/* .footer_images {
-    display: flex;
-    vertical-align: middle;
-    justify-content: center;
-} */
-
 #footer ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-left: 100px;
-    margin-right: 100px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 100px;
+  margin-right: 100px;
 }
-
+/*
 .paw {
- animation: walk 7s steps(8, end) infinite;
- transition-delay: 5s;
+  animation: walk 7s steps(8, end) infinite;
+  transition-delay: 5s;
 }
 
 .paw1 {
- animation: walk 6s steps(8, end) infinite;
- transition-delay: 2s;
+  animation: walk 6s steps(8, end) infinite;
+  transition-delay: 2s;
 }
 
 @keyframes walk {
  to {
    transform: translateX(675px);
  }
-}
+} */
