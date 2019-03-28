@@ -6,42 +6,40 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Abel|Yanone+Kaffeesatz" rel="stylesheet">
   </head>
-
   <body>
     <header>
-      <a href="images/" alt="logo">
-        <nav id="header">
-          <a class=""href="/">Home</a>
+        <nav>
+            <div class="row">
+              <ul class="main-nav">
+                <li><a href="/">Home</a>
 
-          <a href="/stamps">Stamps</a>
+                <li><a href="/merchants">Merchants</a>
 
-          <a href="/merchants">Merchants</a>
+                <li><a href="/transactions">Transactions</a>
 
-          <a href="/transactions">Transactions</a>
+                <li><a href="/stamps">Tags</a>
+              </ul>
+            </div>
         </nav>
     </header>
+
     <%= yield %>
 
-
-
-
   <footer id="footer_block"> #don't touch unless colour/position
-
     <div class="doggie">
       <img src="images/doggie.png">
     </div>
-
     <div class="myriam_is_nice">
-
         <nav id="footer"> #align items
+
           <a href="/images/github.png"></a>
 
           <a href="/images/linkedin.png"></a>
 
           <a href="/images/twitter.png"></a>
+
         </nav>
     </div>
-
   </footer>
   </body>
 </html>

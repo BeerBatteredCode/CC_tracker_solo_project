@@ -8,26 +8,59 @@ html, body {
   background-color: #FFF9EC;
 }
 
-
 .background_image {
   display: flex;
   justify-content: center;
   position: sticky;
 }
 
-#header {
+/* #header {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   padding-top: 30px;
   padding-bottom: 30px;
-  font-family: monospace;
   background-color: rgb(255, 134, 0, 0.8)
+} */
+
+
+.main-nav {
+    font-family: "Yanone Kaffeesatz";
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 20px;
+    padding-right: 150px;
+    padding-left: 150px;
+    background-color: rgb(255, 134, 0, 0.8)
 }
 
-#header a {
-  color: black;
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
 }
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 1s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fcd670;
+}
+
+
+/* #header a {
+  color: black;
+} */
 
 .doggie {
   /* margin-left: 40em; */
@@ -48,7 +81,6 @@ html, body {
  align-content: center;
  margin-top: 2em;
  border-collapse: collapse;
-
 }
 .stamp_table td,
 .stamp_table th {
@@ -94,30 +126,3 @@ body {
   position: absolute;
   width: 100%;
 }
-
-/* .main-nav {
-    float: right;
-    list-style: none;
-    margin-top: 55px;
-}
-
-.main-nav li {
-    display: inline-block;
-    margin-left: 40px;
-}
-
-.main-nav li a:link,
-.main-nav li a:visited {
-    padding: 8px 0;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 90%;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 1s;
-}
-
-.main-nav li a:hover,
-.main-nav li a:active {
-    border-bottom: 2px solid #fcd670;
-} */
