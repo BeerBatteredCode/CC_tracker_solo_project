@@ -25,7 +25,7 @@ html, body {
 
 .main-nav {
     font-family: "Yanone Kaffeesatz";
-    font-size: 45px;
+    font-size: 35px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -66,7 +66,7 @@ html, body {
   /* margin-left: 40em; */
   /* margin-bottom: 1em; */
   position: absolute;
-  bottom: 110px;
+  bottom: 120px;
   right: 0px;
 }
 
@@ -120,9 +120,39 @@ body {
 #footer_block {
 
   background: black;
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   margin-top: 3em;
   position: absolute;
   width: 100%;
+}
+
+/* .footer_images {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+} */
+
+#footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.paw {
+ animation: walk 7s steps(8, end) infinite;
+ transition-delay: 5s;
+}
+
+.paw1 {
+ animation: walk 6s steps(8, end) infinite;
+ transition-delay: 2s;
+}
+
+@keyframes walk {
+ to {
+   transform: translateX(675px);
+ }
 }
