@@ -306,7 +306,7 @@ body {
 
 .summary {
   text-align: center;
-  font-size: 50px;
+  font-size: 25px;
   font-family: "Yanone Kaffeesatz";
   color: #C006;
   padding-top: 1em;
@@ -341,6 +341,9 @@ body {
   margin-right: 100px;
 }
 
+.link_text {
+  color: white;
+}
 /*
 .paw {
   animation: walk 7s steps(8, end) infinite;

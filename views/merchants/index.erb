@@ -15,7 +15,7 @@
   </tr>
   <% for merchant in @merchant_list %>
     <tr>
-      <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
+      <td><a class="link_text" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
     </tr>
   <% end %>
 </table>
