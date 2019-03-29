@@ -1,5 +1,8 @@
 <h1 class="intro">Transaction <%= @transaction.id %> details</h1>
 
+<h3 class="summary">Transaction details:</h3>
+
+
 <p>Transation ID:<%= @transaction.id %></td>
 <p>Tagged as:<%= @transaction.stamp_finder.category.capitalize %> </p>
 <p>Merchant:<%= @transaction.merchant_finder.name %> </p>
