@@ -2,7 +2,7 @@
 
 <p class="intro_p">Wages and Wags!</p>
 
-<table id="searchbar">
+<table class="searchbar">
   <td>
   <form class="textbox_extra" action="/transactions/date_finder" method="GET">
    <label>
@@ -29,20 +29,20 @@
     </td>
 </table>
 
-<ul>
-  <td>
-  <a href="/transactions/new">New transaction</a>
-  </td>
-</ul>
+<p class="new_button">
+  <a href="/transactions/new">Add a Transaction?</a>
+</p>
 
-<ul>
-  <table>
-    <td></td>
-    <td>Charity Total:</td>
-    <td>£<%= @charity_total%></td>
-    <td></td>
-  </table>
-</ul>
+<div class="intro_h3">
+  <ul>
+    <table>
+      <td></td>
+      <td>Charity Total:</td>
+      <td>£<%= @charity_total%></td>
+      <td></td>
+    </table>
+  </ul>
+</div>
 
 <div class="trans_table">
 <!-- <table id="maria"> -->

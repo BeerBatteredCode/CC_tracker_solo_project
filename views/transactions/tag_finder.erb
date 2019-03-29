@@ -1,19 +1,21 @@
-<table>
-  <thead>
-    <th>ID:</th>
-    <th>Merchant:</th>
-    <th>Charge:</th>
-    <th>Tag:</th>
-    <th>Date/Time:</th>
-  </thead>
+<div class="tsearch_table">
+  <table>
+    <thead>
+      <th>ID:</th>
+      <th>Merchant:</th>
+      <th>Charge:</th>
+      <th>Tag:</th>
+      <th>Date/Time:</th>
+    </thead>
 
-  <% @matching_stamp.each do |transaction| %>
-  <tr>
-    <td><%= transaction.id %></td>
-    <td><%= transaction.merchant_finder.name.capitalize %></td>
-    <td><%= transaction.charge %></td>
-    <td><%= transaction.stamp_finder.category.capitalize %></td>
-    <td><%= transaction.date %></td>
-  </tr>
-  <% end %>
-</table>
+    <% @matching_stamp.each do |transaction| %>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.merchant_finder.name.capitalize %></td>
+      <td><%= transaction.charge %></td>
+      <td><%= transaction.stamp_finder.category.capitalize %></td>
+      <td><%= transaction.date %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

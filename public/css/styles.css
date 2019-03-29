@@ -46,7 +46,7 @@ input[type=date] {
   align-items: center;
   justify-content: space-around;
   align-items: flex-end;
-  padding: 1.20em;
+  padding: 1em;
   padding-right: 150px;
   padding-left: 150px;
   background-color: rgb(255, 134, 0, 0.8)
@@ -80,7 +80,7 @@ input[type=date] {
   right: 0px;
 }
 
-#searchbar {
+.searchbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,6 +254,31 @@ input[type=date] {
   text-align: center;
 }
 
+.tsearch_table {
+  font-family: monospace;
+  font-size: 140%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  margin-top: 2em;
+}
+.tsearch_table td,
+.tsearch_table th {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+
 .trans_table tr:nth-child(odd) {
   background-color: #FF630080;
 }
@@ -289,6 +314,13 @@ input[type=date] {
   background-color: #FF630060;
 }
 
+.tsearch_table tr:nth-child(odd) {
+  background-color: #FF630080;
+}
+.tsearch_table tr:nth-child(even) {
+  background-color: #FF630060;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -312,6 +344,17 @@ body {
   padding-top: 1em;
   padding-bottom: 0;
   margin: 0;
+}
+
+.intro_h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 15px;
+  font-family: monospace;
+  padding-top: 1em;
+  color: red;
 }
 
 .intro_p {
@@ -343,6 +386,15 @@ body {
 
 .link_text {
   color: white;
+}
+
+.new_button {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 15px;
+  font-family: monospace;
+  /* padding-bottom: 3em; */
+  color: red;
 }
 /*
 .paw {
