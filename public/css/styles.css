@@ -8,14 +8,6 @@ html, body {
   background-color: #FFF9EC;
 }
 
-
-/* table {
-  font-family: monospace;
-  font-size: 140%;
-  border-radius: 10px;
-  overflow: hidden;
-} */
-
 input[type=text] {
   height: 30px;
   outline: none;
@@ -54,7 +46,7 @@ input[type=date] {
   align-items: center;
   justify-content: space-around;
   align-items: flex-end;
-  padding: 20px;
+  padding: 1.20em;
   padding-right: 150px;
   padding-left: 150px;
   background-color: rgb(255, 134, 0, 0.8)
@@ -307,7 +299,7 @@ body {
   font-size: 50px;
   font-family: "Yanone Kaffeesatz";
   color: #C006;
-  padding-top: 20px;
+  padding-top: 1em;
   padding-bottom: 0;
   margin: 0;
 }
@@ -317,11 +309,9 @@ body {
   margin-top: 5px;
   font-size: 15px;
   font-family: monospace;
-  padding-bottom: 30px;
+  padding-bottom: 3em;
   color: red;
 }
-
-
 
 #footer_block {
   background: black;
@@ -340,6 +330,7 @@ body {
   margin-left: 100px;
   margin-right: 100px;
 }
+
 /*
 .paw {
   animation: walk 7s steps(8, end) infinite;

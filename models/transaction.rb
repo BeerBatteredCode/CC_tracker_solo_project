@@ -87,6 +87,7 @@ class Transaction
     return total / 100 * num
   end
 
+
   def self.find_transaction_date(date)
     sql = 'SELECT * FROM transactions
           INNER JOIN merchants
