@@ -2,11 +2,14 @@
 
 <h3 class="summary">Transaction details:</h3>
 
+<div class="transaction_show">
+    <div class="transaction_detail"
+        <p>Transation ID: <%= @transaction.id %></td>
+        <p>Tagged as: <%= @transaction.stamp_finder.category.capitalize %> </p>
+        <p>Merchant: <%= @transaction.merchant_finder.name %> </p>
+        <p>Charge: £<%= @transaction.charge %></p>
+        <p>Date & Time: <%= @transaction.date %></p>
 
-<p>Transation ID:<%= @transaction.id %></td>
-<p>Tagged as:<%= @transaction.stamp_finder.category.capitalize %> </p>
-<p>Merchant:<%= @transaction.merchant_finder.name %> </p>
-<p>Charge: £<%= @transaction.charge %></p>
-<p>Date & Time:<%= @transaction.date %></p>
-
-<a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
+        <a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
+    </div>
+</div>

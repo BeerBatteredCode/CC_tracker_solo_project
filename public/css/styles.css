@@ -3,9 +3,25 @@
   padding: 0;
 }
 
+
 html, body {
   height: 100%;
   background-color: #FFF9EC;
+}
+
+.main_logo {
+  width: 22em;
+  height: 22em;
+}
+
+.banner_logo {
+  width: 3.5em;
+  height: 3.5em;
+  margin-bottom: -2em;
+}
+
+.doggie_pic {
+  margin-top: 2em;
 }
 
 input[type=text] {
@@ -40,16 +56,16 @@ input[type=date] {
 }
 
 .main-nav {
-  font-family: monospace;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  align-items: flex-end;
-  padding: 1em;
-  padding-right: 150px;
-  padding-left: 150px;
-  background-color: rgb(255, 134, 0, 0.8)
+    font-family: monospace;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    align-items: center;
+    padding: 0.3em;
+    padding-right: 6em;
+    padding-left: 1em;
+    background-color: rgb(255, 134, 0, 0.8);
 }
 
 .main-nav li {
@@ -129,6 +145,56 @@ input[type=date] {
   overflow: hidden;
 } */
 
+.new_transaction_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 6em;
+}
+
+.new_transaction_labels {
+  display: flex;
+  justify-content: center;
+  margin: 0.3em;
+}
+
+.edit_transaction_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 6em;
+  width: 10em;
+}
+
+.edit_transaction_form {
+  display: flex;
+  justify-content: center;
+}
+
+.edit_transaction_labels {
+  display: flex;
+  justify-content: center;
+  margin: 0.3em;
+}
+
+.new_merchant_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-left: 3em;
+  margin-bottom: 15em;
+}
+
+.new_tag_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-left: 3em;
+  margin-bottom: 15em;
+}
+
 .merc_table {
   font-family: monospace;
   font-size: 140%;
@@ -143,7 +209,7 @@ input[type=date] {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .merc_table td,
 .merc_table th {
@@ -168,7 +234,7 @@ input[type=date] {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .stamp_table td,
 .stamp_table th {
@@ -193,7 +259,7 @@ input[type=date] {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .trans_table td,
 .trans_table th {
@@ -268,7 +334,7 @@ input[type=date] {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .tsearch_table td,
 .tsearch_table th {
@@ -326,6 +392,15 @@ body {
   padding: 0;
 }
 
+.all_transaction_table {
+  margin-bottom: 10em;
+}
+
+.msearch_table {
+  margin-top: 3em;
+  margin-bottom: 6em;
+}
+
 .intro {
   text-align: center;
   font-size: 50px;
@@ -350,10 +425,10 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   font-size: 15px;
   font-family: monospace;
-  padding-top: 1em;
+  padding-top: 0.5em;
   color: red;
 }
 
@@ -362,7 +437,7 @@ body {
   margin-top: 5px;
   font-size: 15px;
   font-family: monospace;
-  padding-bottom: 3em;
+  padding-bottom: 2.5em;
   color: red;
 }
 
@@ -379,10 +454,16 @@ body {
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 100px;
-  margin-right: 100px;
+  justify-content: space-between;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-bottom: 0.01em;
 }
+.icon {
+  /* padding-left: 4em;
+  padding-right: 2em; */
+}
+
 
 .link_text {
   color: white;
@@ -390,7 +471,7 @@ body {
 
 .new_button {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 1em;
   font-size: 15px;
   font-family: monospace;
   /* padding-bottom: 3em; */
@@ -412,3 +493,75 @@ body {
    transform: translateX(675px);
  }
 } */
+
+.tag_show {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(255, 134, 0, 0.3); */
+}
+
+.tag_show ul {
+  background-color: rgb(255, 134, 0, 0.5);
+  font-family: monospace;
+  color: #fff;
+  padding: 1em;
+  margin: 2em;
+  font-size: 1.5em;
+}
+
+.tag_show h4 {
+  margin: 0.3em 0 0.3em 0;
+}
+
+.tag_show_textbox {
+  display: flex;
+  justify-content: center;
+}
+
+.merchant_show {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(255, 134, 0, 0.3); */
+}
+
+.merchant_show ul {
+  background-color: rgb(255, 134, 0, 0.5);
+  font-family: monospace;
+  color: #fff;
+  padding: 1em;
+  margin: 2em;
+  font-size: 1.5em;
+}
+
+.merchant_show h4 {
+  margin: 0.3em 0 0.3em 0;
+}
+
+.merchant_show_textbox {
+  display: flex;
+  justify-content: center;
+}
+
+.transaction_show {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(255, 134, 0, 0.3); */
+}
+
+.transaction_detail {
+  background-color: rgb(255, 134, 0, 0.5);
+  font-family: monospace;
+  color: #fff;
+  padding: 1em;
+  margin: 2em;
+  font-size: 1.5em;
+}
+
+.transaction_show h4 {
+  margin: 0.3em 0 0.3em 0;
+}
+
+.transaction_show_textbox {
+  display: flex;
+  justify-content: center;
+}

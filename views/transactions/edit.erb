@@ -1,37 +1,39 @@
-<h2>Hello this is working now, well done!</h2>
+<h1 class="intro">Edit Statement</h1>
 
-<form action="/transactions/<%=@transaction.id%>" method="post">
+<div class="edit_transaction_div">
+  <table class="searchbar">
+    <form action="/transactions/<%=@transaction.id%>" method="post">
+        <label class="edit_transaction_label" for="charge">Charge:</label>
+        <input type="number" name="charge" step = "0.01" id="charge" value="<%=@transaction.charge%>"/>
 
-    <label for="charge">Charge:</label>
-    <input type="number" name="charge" step = "0.01" id="charge" value="<%=@transaction.charge%>"/>
+        <label class="edit_transaction_label">Tag:</label>
+        <select name="stamp_id">
+          <% @stamp_list.each do |stamp| %>
+            <% if stamp.id == @transaction.stamp_id %>
+              <option value=<%= stamp.id %> selected><%= stamp.category %></option>
+            <% else %>
+              <option value=<%= stamp.id %>><%= stamp.category %></option>
+            <% end %>
+          <% end %>
+        </select>
 
-    <label>Tag:</label>
-    <select name="stamp_id">
-      <% @stamp_list.each do |stamp| %>
-        <% if stamp.id == @transaction.stamp_id %>
-          <option value=<%= stamp.id %> selected><%= stamp.category %></option>
-        <% else %>
-          <option value=<%= stamp.id %>><%= stamp.category %></option>
-        <% end %>
-      <% end %>
-    </select>
+        <label class="edit_transaction_label">Merchant:</label>
+        <select name="merchant_id">
+          <% @merchant_list.each do |merchant| %>
+            <% if merchant.id == @transaction.merchant_id %>
+              <option value=<%= merchant.id %> selected><%= merchant.name %></option>
+            <% else %>
+              <option value=<%= merchant.id %>><%= merchant.name %></option>
+            <% end %>
+          <% end %>
+        </select>
 
-    <label>Merchant:</label>
-    <select name="merchant_id">
-      <% @merchant_list.each do |merchant| %>
-        <% if merchant.id == @transaction.merchant_id %>
-          <option value=<%= merchant.id %> selected><%= merchant.name %></option>
-        <% else %>
-          <option value=<%= merchant.id %>><%= merchant.name %></option>
-        <% end %>
-      <% end %>
-    </select>
+        <label class="edit_transaction_label"> Charitable?
+          <input type="hidden" name="is_charitable" value="f">
+          <input type="checkbox" name="is_charitable" value="t" unchecked>
+        </label>
 
-      <label> Charitable?
-        <input type="hidden" name="is_charitable" value="f">
-        <input type="checkbox" name="is_charitable" value="t" unchecked>
-      </label>
-
-    <input type="submit" value="Update"/>
-
-</form>
+        <input type="submit" value="Update"/>
+    </form>
+  </table>
+</div>

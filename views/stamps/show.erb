@@ -2,19 +2,24 @@
 
 <h3 class="summary">Tag details:</h3>
 
-<ul>
-  <li>ID: <%= @stamp.id %></li>
-  <% @stamp.merchant_check.each do |merchant| %>
-    <li><%= merchant.name.upcase %></li>
-  <% end %>
-  <form action="/stamps/<%= @stamp.id %>/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="Delete" />
-  </form>
-</ul>
-
-<ul>
-    <form action="/stamps/<%= @stamp.id %>/edit" method="post">
-      <input type="text" name="category" placeholder="" value="<%= @stamp.category%>">
-      <input class="btn btn--action" type='submit' value="Edit">
+<div class="tag_show">
+  <ul>
+    <h4>TAG ID: <%= @stamp.id %></h4>
+    <p> Used with the following Merchants:</p>
+    <% @stamp.merchant_check.each do |merchant| %>
+      <h4><%= merchant.name.upcase %></h4>
+    <% end %>
+    <form action="/stamps/<%= @stamp.id %>/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="Delete" />
     </form>
-</ul>
+  </ul>
+</div>
+
+<div class="tag_show_textbox">
+  <ul>
+      <form action="/stamps/<%= @stamp.id %>/edit" method="post">
+        <input type="text" name="category" placeholder="" value="  <%= @stamp.category%>">
+        <input class="btn btn--action" type='submit' value="Edit">
+      </form>
+  </ul>
+</div>
